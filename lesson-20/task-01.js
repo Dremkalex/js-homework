@@ -9,7 +9,7 @@ class Customers {
             throw new Error('The method should be invoked with 1 parameter!')
         } else if (typeof entity !== 'object') {
             throw new Error ('The parameter should be an object!')
-        } else if (!entity.name) {
+        } else if (!entity.hasOwnProperty('name')) {
             throw new Error ('Object does not valid: property "name" is required!')
         } else if (properties.length === 2 && properties.some(item => item !== 'name' && item !== 'verified')) {
             throw new Error('Object does not valid: property should be one of "name" or "verified"')
